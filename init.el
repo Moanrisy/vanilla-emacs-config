@@ -91,3 +91,15 @@
 ;;; Load other config files
 (load-file "~/.emacs.d/keybindings.el")
 (load-file "~/.emacs.d/packages.el")
+(load-file "~/.emacs.d/my-agenda.el")
+(load-file "~/.emacs.d/my-browse-url.el")
+
+;;; My own init config
+
+;; (setq display-line-numbers-type 'visual) ;; Not working on nano theme
+;; open this file on startup so org-capture work properly
+(find-file "~/Dropbox/notes/notes.org")
+(find-file "~/Dropbox/notes/inbox.org")
+;;;; run custom org-agenda at startup
+(setq org-agenda-window-setup 'only-window)
+(org-agenda nil "g")
