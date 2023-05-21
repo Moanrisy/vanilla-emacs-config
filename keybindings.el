@@ -89,7 +89,13 @@
   ;; search
   ;; see 'consult'
   (patrl/leader-keys
-    "s" '(:ignore t :wk "search"))
+    "s" '(:ignore t :wk "search")
+    "sg" '(my-search-google t :wk "google")
+    "sy" '(my-search-youtube t :wk "youtube"))
+
+  ;; agenda
+  (patrl/leader-keys
+    "a" 'my-)
 
   ;; templating
   ;; see 'tempel'
