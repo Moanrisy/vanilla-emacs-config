@@ -38,8 +38,8 @@
 ;;; Defaults
 (use-package emacs
   :init
-  (setq user-full-name "Patrick D. Elliott") ;; my details
-  (setq user-mail-address "patrick.d.elliott@gmail.com")
+  (setq user-full-name "Mohammad Anton") ;; my details
+  (setq user-mail-address "moanrisy@gmail.com")
 
   (defalias 'yes-or-no-p 'y-or-n-p) ;; life is too short
 
