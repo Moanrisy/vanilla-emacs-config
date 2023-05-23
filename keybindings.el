@@ -33,7 +33,8 @@
 
 
   (patrl/leader-keys
-    "SPC" '(execute-extended-command :wk "execute command") ;; an alternative to 'M-x'
+    ;;"SPC" '(execute-extended-command :wk "execute command") ;; an alternative to 'M-x'
+    "SPC" '(switch-to-buffer :wk "switch buffer") ;; gets overridden by consult
     "TAB" '(:keymap tab-prefix-map :wk "tab")) ;; remap tab bindings
 
   (patrl/leader-keys
@@ -54,15 +55,12 @@
   ;; see 'bufler' and 'popper'
   (patrl/leader-keys
     "b" '(:ignore t :wk "buffer")
-    "bb" '(switch-to-buffer :wk "switch buffer") ;; gets overridden by consult
     "bk" '(kill-this-buffer :wk "kill this buffer")
-    "br" '(revert-buffer :wk "reload buffer"))
-
+    "br" '(revert-buffer :wk "reload buffer")
   ;; bookmark
-  (patrl/leader-keys
-    "B" '(:ignore t :wk "bookmark")
-    "Bs" '(bookmark-set :wk "set bookmark")
-    "Bj" '(bookmark-jump :wk "jump to bookmark"))
+    "bs" '(bookmark-set :wk "set bookmark")
+    "bj" '(bookmark-jump :wk "jump to bookmark")
+    )
 
   ;; universal argument
   (patrl/leader-keys
@@ -74,7 +72,9 @@
     "n" '(:ignore t :wk "notes")
     ;; see org-roam and citar sections
     "na" '(org-todo-list :wk "agenda todos") ;; agenda
-    "nd" '(deft :wk "deft notes")) ;; deft ntoes
+    "nd" '(deft :wk "deft notes") ;; deft notes
+    "ni" '(org-clock-in :wk "notes clock in")
+    "no" '(org-clock-out :wk "notes clock out"))
 
   ;; code
   ;; see 'flymake'
@@ -95,7 +95,8 @@
 
   ;; agenda
   (patrl/leader-keys
-    "a" 'my-)
+    "a" '(:ignore t :wk "org-agenda")
+    "ag" '(my-org-agenda-g :wk "open agenda g view"))
 
   ;; templating
   ;; see 'tempel'
