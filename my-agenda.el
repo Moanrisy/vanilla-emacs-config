@@ -1,5 +1,11 @@
 ;;; my-agenda.el --- Agenda config file -*- lexical-binding: t; no-byte-compile: t -*-
 
+;; function to launch agenda then oipen g view
+(defun my-org-agenda-g ()
+  "Launches the Org Agenda and switches to the 'g' view."
+  (interactive)
+  (org-agenda nil "g"))
+
 ;; Clock in task fyne
 ;; Hook for clock-in
 (defun write-clock-in-title-hook()

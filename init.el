@@ -96,6 +96,12 @@
 
 ;;; My own init config
 
+;; set org-todo-keyword color
+(setq org-todo-keyword-faces
+      '(("TODO" . org-warning)
+        ("IN-PROGRESS" . "yellow")
+        ("DONE" . (:foreground "green" :weight bold))))
+
 ;; (setq display-line-numbers-type 'visual) ;; Not working on nano theme
 ;; open this file on startup so org-capture work properly
 (find-file "~/Dropbox/notes/notes.org")
