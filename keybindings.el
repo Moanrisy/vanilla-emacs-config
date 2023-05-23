@@ -56,6 +56,8 @@
   (patrl/leader-keys
     "b" '(:ignore t :wk "buffer")
     "bk" '(kill-this-buffer :wk "kill this buffer")
+    ; use ibuffer, M-x ibuffer t D y
+    ;;"bK" '(kill-other-buffers :wk "kill other buffers")
     "br" '(revert-buffer :wk "reload buffer")
   ;; bookmark
     "bs" '(bookmark-set :wk "set bookmark")
