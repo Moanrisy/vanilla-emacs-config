@@ -96,6 +96,12 @@
 
 ;;; My own init config
 
+;; ignore case when switch buffer
+(setq read-buffer-completion-ignore-case t)
+
+;; set initial visibility for all org-mode files
+(setq org-startup-folded t)
+
 ;; set org-todo-keyword color
 (setq org-todo-keyword-faces
       '(("TODO" . org-warning)
