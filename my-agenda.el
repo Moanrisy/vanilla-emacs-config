@@ -8,20 +8,20 @@
 
 ;; Clock in task fyne
 ;; Hook for clock-in
-(defun write-clock-in-title-hook()
-"Write clock in title into a file"
-(message (symbol-value 'org-clock-heading))
-(message "clocked time %d." (org-clock-get-clocked-time))
-(append-to-file (number-to-string (org-clock-get-clocked-time)) nil "C:\\Users\\moanr\\AppData\\Local\\Temp\\clock-in-title")
-(append-to-file "/" nil "C:\\Users\\moanr\\AppData\\Local\\Temp\\clock-in-title")
+(defun write-clock-in-title-hook ()
+  "Write clock in title into a file"
+  (let ((clock-in-file "C:\\Users\\moanr\\AppData\\Local\\Temp\\clock-in-title"))
+    (message (symbol-value 'org-clock-heading))
+    (message "clocked time %d." (org-clock-get-clocked-time))
+    (append-to-file (number-to-string (org-clock-get-clocked-time)) nil clock-in-file)
+    (append-to-file "/" nil clock-in-file)
 
-(when (symbol-value 'org-clock-effort)
-(append-to-file (symbol-value 'org-clock-effort) nil "C:\\Users\\moanr\\AppData\\Local\\Temp\\clock-in-title"))
+    (when (symbol-value 'org-clock-effort)
+      (append-to-file (symbol-value 'org-clock-effort) nil clock-in-file))
 
-(append-to-file " " nil "C:\\Users\\moanr\\AppData\\Local\\Temp\\clock-in-title")
-(append-to-file (symbol-value 'org-clock-heading) nil "C:\\Users\\moanr\\AppData\\Local\\Temp\\clock-in-title")
-(append-to-file "\n" nil "C:\\Users\\moanr\\AppData\\Local\\Temp\\clock-in-title")
-)
+    (append-to-file " " nil clock-in-file)
+    (append-to-file (symbol-value 'org-clock-heading) nil clock-in-file)
+    (append-to-file "\n" nil clock-in-file)))
 
 (add-hook 'org-clock-in-hook 'write-clock-in-title-hook)
 (run-at-time nil 60 #'write-clock-in-title-hook)
