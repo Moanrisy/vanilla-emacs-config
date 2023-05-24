@@ -76,6 +76,7 @@
     "na" '(org-todo-list :wk "agenda todos") ;; agenda
     "nd" '(deft :wk "deft notes") ;; deft notes
     "ni" '(org-clock-in :wk "notes clock in")
+    "nc" '(org-clock-goto :wk "currently clocked in notes")
     "no" '(org-clock-out :wk "notes clock out"))
 
   ;; code
