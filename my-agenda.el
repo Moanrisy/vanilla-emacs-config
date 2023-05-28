@@ -26,6 +26,11 @@
 (add-hook 'org-clock-in-hook 'write-clock-in-title-hook)
 (run-at-time nil 60 #'write-clock-in-title-hook)
 
+(defun my-org-clock-out-hook ()
+  (setq org-clock-heading "Let's go clock-in another task"))
+
+(add-hook 'org-clock-out-hook 'my-org-clock-out-hook)
+
 ;; Emacs GTD
 ;; https://github.com/rougier/emacs-gtd
 (setq org-directory "~/Dropbox/notes")
