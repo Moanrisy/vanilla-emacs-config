@@ -96,6 +96,9 @@
 
 ;;; My own init config
 
+;; fix indentation in org-mode
+(add-hook 'org-mode-hook 'org-indent-mode)
+
 ;; ignore case when switch buffer
 (setq read-buffer-completion-ignore-case t)
 
