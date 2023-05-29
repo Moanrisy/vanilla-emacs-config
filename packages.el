@@ -31,10 +31,38 @@
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
 
+(use-package org-pomodoro
+  :ensure t
+  :after org
+  :config
+  ;; Hook for org-pomodoro
+  (add-hook 'org-pomodoro-started-hook
+          (lambda ()
+            (interactive)
+            (start-process-shell-command "feha" nil "cmd.exe /c C:/Users/moanr/Dropbox/Scripts/feha.bat")))
+
+  (add-hook 'org-pomodoro-finished-hook
+          (lambda ()
+            (interactive)
+            (start-process-shell-command "fehb" nil "cmd.exe /c C:/Users/moanr/Dropbox/Scripts/fehb.bat")))
+
+  (add-hook 'org-pomodoro-break-finished-hook
+          (lambda ()
+            (interactive)
+            (start-process-shell-command "fehc" nil "cmd.exe /c C:/Users/moanr/Dropbox/Scripts/fehc.bat")))
+
+  (defun my-org-pomodoro-break-finished-hook ()
+  (setq org-clock-heading "After a good break, Let's go clock-in another task"))
+
+  (add-hook 'org-pomodoro-break-finished-hook 'my-org-pomodoro-break-finished-hook)
+)
+
+
 ;; Always load theme as the last package! -----------------
-(straight-use-package
-  '(nano-emacs :type git :host github :repo "rougier/nano-emacs"))
-(require 'nano)
+;;; Nano theme can't shown org-pomodoro timer
+ (straight-use-package
+   '(nano-emacs :type git :host github :repo "rougier/nano-emacs"))
+ (require 'nano)
 
 ;; redisable menu bar mode after load nano theme
 (menu-bar-mode -1)
