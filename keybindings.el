@@ -89,6 +89,11 @@
     "o" '(:ignore t :wk "open")
     "os" '(speedbar t :wk "speedbar")) ;; TODO this needs some love
 
+  ;; run
+  (patrl/leader-keys
+    "r" '(:ignore t :wk "run")
+    "rp" '(org-pomodoro t :wk "run pomodoro"))
+
   ;; search
   ;; see 'consult'
   (patrl/leader-keys
