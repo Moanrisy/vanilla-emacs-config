@@ -43,7 +43,16 @@
 ;; custom agenda
 (setq org-agenda-custom-commands
       '(("g" "Get Things Done (GTD)"
-         ((agenda ""
+         ((agenda nil
+                  ((org-agenda-entry-types '(:deadline))
+                   (org-agenda-format-date "")
+                   (org-deadline-warning-days 14)
+                   ;(org-agenda-skip-function
+                   ; '(org-agenda-skip-entry-if 'regexp "\\* NEXT"))
+                   (org-agenda-overriding-header "\nDeadlines")
+                   )
+                  )
+          (agenda ""
                   ((org-agenda-skip-function
                     '(org-agenda-skip-entry-if 'deadline)
                     )
@@ -54,24 +63,25 @@
                    (org-agenda-start-day "0d")
                    (org-agenda-span 'day)
                    ))
-;;          (todo "DAILY"
-;;                ((org-agenda-skip-function
-;;                  '(org-agenda-skip-entry-if 'deadline))
-;;                 (org-agenda-prefix-format "  %i %-12:c [%e] ")
-;;                 (org-agenda-todo-ignore-scheduled 'future)
-;;                 (org-agenda-overriding-header "\nDaily habits\n")))
-          (todo "NEXT"
+          (todo "DAILY"
                 ((org-agenda-skip-function
                   '(org-agenda-skip-entry-if 'deadline))
                  (org-agenda-prefix-format "  %i %-12:c [%e] ")
-                 (org-agenda-overriding-header "\nTasks\n")))
-          (agenda nil
-                  ((org-agenda-entry-types '(:deadline))
-                   (org-agenda-format-date "")
-                   (org-deadline-warning-days 7)
-                   (org-agenda-skip-function
-                    '(org-agenda-skip-entry-if 'notregexp "\\* NEXT"))
-                   (org-agenda-overriding-header "\nDeadlines")))
+                 ;; (org-agenda-todo-ignore-scheduled 'future)
+                 (org-agenda-overriding-header "\nDaily habits\n")))
+;;          (agenda nil
+;;                  ((org-agenda-entry-types '(:deadline))
+;;                   (org-agenda-format-date "")
+;;                   (org-deadline-warning-days 7)
+;;                   (org-agenda-skip-function
+;;                    '(org-agenda-skip-entry-if 'notregexp "\\* NEXT"))
+;;                   (org-agenda-overriding-header "\nDeadlines")))
+           (todo "NEXT"
+                 ((org-agenda-skip-function
+                   '(org-agenda-skip-entry-if 'deadline))
+                  (org-agenda-prefix-format "  %i %-12:c [%e] ")
+                  (org-agenda-overriding-header "\nTasks\n")))
+
           (tags-todo "course"
                      ((org-agenda-prefix-format "  %?-12t% s")
                       (org-agenda-overriding-header "\nCourse\n")))
@@ -80,3 +90,6 @@
                       (org-agenda-overriding-header "\nInbox\n")))
           (tags "CLOSED>=\"<today>\""
                 ((org-agenda-overriding-header "\nCompleted today\n")))))))
+
+;; this need to enabled to make 'Completed today' work in agenda
+(setq org-log-done 'time)
