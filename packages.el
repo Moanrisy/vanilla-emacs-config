@@ -35,6 +35,11 @@
   :ensure t
   :after org
   :config
+
+  ;; Add the new keybinding to org-agenda-mode-map
+  (evil-define-key 'motion org-agenda-mode-map
+    "i" 'org-pomodoro)
+
   ;; Hook for org-pomodoro
   (add-hook 'org-pomodoro-started-hook
           (lambda ()
