@@ -78,6 +78,15 @@
             (define-key git-gutter+-mode-map (kbd "C-x U") 'git-gutter+-unstage-whole-buffer))
   :diminish (git-gutter+-mode . "gg"))
 
+;; visual fill column
+(use-package visual-fill-column
+  :config
+  (setq-default visual-fill-column-center-text t)
+  (setq global-visual-fill-column-mode t))
+
+(add-hook 'text-mode-hook #'visual-fill-column-mode)
+(add-hook 'text-mode-hook #'visual-line-mode)
+
 ;; Always load theme as the last package! -----------------
 ;;; Nano theme can't shown org-pomodoro timer
  (straight-use-package
