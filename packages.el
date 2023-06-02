@@ -21,7 +21,8 @@
 (use-package real-auto-save
   :init
   (require 'real-auto-save)
-  (add-hook 'org-mode-hook 'real-auto-save-mode))
+  (setq real-auto-save-interval 2) ;; in seconds
+  (add-hook 'text-mode-hook 'real-auto-save-mode))
 
 (use-package evil-org
   :ensure t
