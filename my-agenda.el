@@ -38,7 +38,7 @@
 
 ;; todo keywords
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "DAILY(y)" "NEXT(n)" "HOLD(h)" "BUG(b)" "|" "DONE(d)" "KILL(k)")))
+      '((sequence "TODO(t)" "INBOX(i)" "DAILY(y)" "NEXT(n)" "HOLD(h)" "BUG(b)" "|" "DONE(d)" "KILL(k)")))
 
 ;; custom agenda
 (setq org-agenda-custom-commands
