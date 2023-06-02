@@ -93,19 +93,27 @@
 (load-file "~/.emacs.d/packages.el")
 (load-file "~/.emacs.d/my-agenda.el")
 (load-file "~/.emacs.d/my-browse-url.el")
+(load-file "~/.emacs.d/my-functions.el")
 
 ;;; My-config for init.el
 
 ;; ignore windows error sound when press C-g
 (setq ring-bell-function 'ignore)
 
-;; prevent org-pomodoro running for task without estimated effort
+;; prevent org-pomodoro and org-clock-in running for task without estimated effort
 (defun my-org-pomodoro ()
   "Start a pomodoro timer if org-effort is set."
   (interactive)
   (if (org-entry-get (point) "Effort")
       (org-pomodoro)
     (message "Please set org-effort for this task before starting a pomodoro.")))
+
+(defun my-org-clock-in ()
+  "Start a clock-in timer if org-effort is set."
+  (interactive)
+  (if (org-entry-get (point) "Effort")
+      (org-clock-in)
+    (message "Please set org-effort for this task before starting doing clock-in.")))
 
 ;; fix indentation in org-mode
 (add-hook 'org-mode-hook 'org-indent-mode)
