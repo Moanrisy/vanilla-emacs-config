@@ -92,7 +92,7 @@
   ;; run
   (patrl/leader-keys
     "r" '(:ignore t :wk "run")
-    "rp" '(org-pomodoro t :wk "run pomodoro"))
+    "rp" '(my-org-pomodoro t :wk "run pomodoro"))
 
   ;; search
   ;; see 'consult'

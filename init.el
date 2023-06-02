@@ -96,6 +96,15 @@
 
 ;;; My own init config
 
+
+;; prevent org-pomodoro running for task without estimated effort
+(defun my-org-pomodoro ()
+  "Start a pomodoro timer if org-effort is set."
+  (interactive)
+  (if (org-entry-get (point) "Effort")
+      (org-pomodoro)
+    (message "Please set org-effort for this task before starting a pomodoro.")))
+
 ;; fix indentation in org-mode
 (add-hook 'org-mode-hook 'org-indent-mode)
 
