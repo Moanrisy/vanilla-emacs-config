@@ -94,8 +94,10 @@
 (load-file "~/.emacs.d/my-agenda.el")
 (load-file "~/.emacs.d/my-browse-url.el")
 
-;;; My own init config
+;;; My-config for init.el
 
+;; ignore windows error sound when press C-g
+(setq ring-bell-function 'ignore)
 
 ;; prevent org-pomodoro running for task without estimated effort
 (defun my-org-pomodoro ()
