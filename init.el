@@ -124,6 +124,7 @@
 ;; open this file on startup so org-capture work properly
 (find-file "~/Dropbox/notes/notes.org")
 (find-file "~/Dropbox/notes/inbox.org")
+(find-file "~/Dropbox/notes/now.org")
 ;;;; run custom org-agenda at startup
 (setq org-agenda-window-setup 'only-window)
 (org-agenda nil "g")
