@@ -85,6 +85,10 @@
   (patrl/leader-keys
     "c" '(:ignore t :wk "code"))
 
+  ;; jump
+  (patrl/leader-keys
+    "j" '(evil-avy-goto-char-2 t :wk "avy jump"))
+
   ;; open
   (patrl/leader-keys
     "o" '(:ignore t :wk "open")

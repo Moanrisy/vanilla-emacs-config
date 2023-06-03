@@ -88,6 +88,9 @@
 (add-hook 'text-mode-hook #'visual-fill-column-mode)
 (add-hook 'text-mode-hook #'visual-line-mode)
 
+;; avy - jump to things
+(use-package avy)
+
 ;; Always load theme as the last package! -----------------
 ;;; Nano theme can't shown org-pomodoro timer
  (straight-use-package
