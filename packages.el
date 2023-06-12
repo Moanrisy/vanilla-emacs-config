@@ -38,6 +38,7 @@
   :config
 
   ;; Add the new keybinding to org-agenda-mode-map
+  ;; BUG my-org-pomodoro didn't work in agenda mode
   (evil-define-key 'motion org-agenda-mode-map
     "i" 'my-org-pomodoro)
 
