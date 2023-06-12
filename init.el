@@ -97,6 +97,19 @@
 
 ;;; My-config for init.el
 
+;; temporary set set-org-agenda-files to search by tag
+(defun my-tags-view (&optional directory)
+  "With prefix arg, prompt for DIRECTORY to search tags."
+  (interactive (list (if current-prefix-arg (read-directory-name "Directory: "))))
+  (let ((org-agenda-files (if directory (list directory)
+                            org-agenda-files)))
+    ;; forward prefix arg - this makes it so prefix args passed to `org-tags-view'
+    ;; require one more prefix, eg. C-u C-u my-tags-view => todo-only tags
+    (setq current-prefix-arg
+          (unless (equal current-prefix-arg '(4))
+            (list (ash (prefix-numeric-value current-prefix-arg) -2))))
+    (call-interactively #'org-tags-view)))
+
 ;; ignore windows error sound when press C-g
 (setq ring-bell-function 'ignore)
 
