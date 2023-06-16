@@ -97,6 +97,14 @@
 
 ;;; My-config for init.el
 
+(defun my-org-hide-sublevels ()
+  "Hide all sublevels under the current heading."
+  (interactive)
+  (outline-hide-sublevels 1))
+
+(with-eval-after-load 'org
+  (define-key org-mode-map (kbd "<C-tab>") 'my-org-hide-sublevels))
+
 ;; ignore windows error sound when press C-g
 (setq ring-bell-function 'ignore)
 

@@ -10,7 +10,8 @@
 ;; Hook for clock-in
 (defun write-clock-in-title-hook ()
   "Write clock in title into a file"
-  (let ((clock-in-file "C:\\Users\\moanr\\AppData\\Local\\Temp\\clock-in-title"))
+  ;;; (let ((clock-in-file "C:\\Users\\moanr\\AppData\\Local\\Temp\\clock-in-title"))
+   (let ((clock-in-file "/tmp/clock-in-title"))
     (message (symbol-value 'org-clock-heading))
     (message "clocked time %d." (org-clock-get-clocked-time))
     (append-to-file (number-to-string (org-clock-get-clocked-time)) nil clock-in-file)
