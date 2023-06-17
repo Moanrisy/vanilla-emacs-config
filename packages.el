@@ -46,17 +46,24 @@
   (add-hook 'org-pomodoro-started-hook
           (lambda ()
             (interactive)
-            (start-process-shell-command "feha" nil "cmd.exe /c C:/Users/moanr/Dropbox/Scripts/feha.bat")))
+            (start-process-shell-command "feha" nil "~/Dropbox/Scripts/./feha.sh")))
+            ;; (start-process-shell-command "feha" nil "cmd.exe /c C:/Users/moanr/Dropbox/Scripts/feha.bat"))) ;; windows
 
   (add-hook 'org-pomodoro-finished-hook
           (lambda ()
             (interactive)
-            (start-process-shell-command "fehb" nil "cmd.exe /c C:/Users/moanr/Dropbox/Scripts/fehb.bat")))
+            (start-process-shell-command "fehb" nil "~/Dropbox/Scripts/./fehb.sh")))
+            ;; (start-process-shell-command "fehb" nil "cmd.exe /c C:/Users/moanr/Dropbox/Scripts/fehb.bat"))) ;; windows
+
+  (defun my-pomo-test()
+            (interactive)
+            (start-process-shell-command "fehb" nil "~/Dropbox/Scripts/./fehb.sh"))
 
   (add-hook 'org-pomodoro-break-finished-hook
           (lambda ()
             (interactive)
-            (start-process-shell-command "fehc" nil "cmd.exe /c C:/Users/moanr/Dropbox/Scripts/fehc.bat")))
+            (start-process-shell-command "fehc" nil "~/Dropbox/Scripts/./fehc.sh")))
+            ;; (start-process-shell-command "fehc" nil "cmd.exe /c C:/Users/moanr/Dropbox/Scripts/fehc.bat"))) ;; windows
 
   (defun my-org-pomodoro-break-finished-hook ()
   (setq org-clock-heading "After a good break, Let's go clock-in another task"))

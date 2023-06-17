@@ -97,6 +97,7 @@
 
 ;;; My-config for init.el
 
+;;; hide all org mode heading
 (defun my-org-hide-sublevels ()
   "Hide all sublevels under the current heading."
   (interactive)
