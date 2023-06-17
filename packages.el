@@ -100,10 +100,12 @@
 (use-package avy)
 
 ;; Always load theme as the last package! -----------------
+(load-file "~/.emacs.d/themes/vivid-theme.el")
+(load-theme 'vivid t)
 ;;; Nano theme can't shown org-pomodoro timer
- (straight-use-package
-   '(nano-emacs :type git :host github :repo "rougier/nano-emacs"))
- (require 'nano)
+;;(straight-use-package
+;;   '(nano-emacs :type git :host github :repo "rougier/nano-emacs"))
+;; (require 'nano)
 
 ;; redisable menu bar mode after load nano theme
 (menu-bar-mode -1)
