@@ -1,5 +1,8 @@
 ;;; my-config.el --- My own init config file -*- lexical-binding: t; no-byte-compile: t -*-
 
+;;; open file on last edited position
+(save-place-mode 1)
+
 ;;; automatically insert timestamp on new heading
 (defun my/org-add-created-timestamp ()
   (interactive)
