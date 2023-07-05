@@ -53,6 +53,12 @@
                    (org-agenda-overriding-header "\nDeadlines")
                    )
                   )
+	  (todo "DAILY"
+                ((org-agenda-skip-function
+                  '(org-agenda-skip-entry-if 'deadline))
+                 (org-agenda-prefix-format "  %i %-12:c [%e] ")
+                 ;; (org-agenda-todo-ignore-scheduled 'future)
+                 (org-agenda-overriding-header "\nDaily habits\n")))
           (agenda ""
                   ((org-agenda-skip-function
                     '(org-agenda-skip-entry-if 'deadline)
@@ -64,12 +70,6 @@
                    (org-agenda-start-day "0d")
                    (org-agenda-span 'day)
                    ))
-          (todo "DAILY"
-                ((org-agenda-skip-function
-                  '(org-agenda-skip-entry-if 'deadline))
-                 (org-agenda-prefix-format "  %i %-12:c [%e] ")
-                 ;; (org-agenda-todo-ignore-scheduled 'future)
-                 (org-agenda-overriding-header "\nDaily habits\n")))
 ;;          (agenda nil
 ;;                  ((org-agenda-entry-types '(:deadline))
 ;;                   (org-agenda-format-date "")
