@@ -45,6 +45,10 @@
   (evil-define-key 'motion org-agenda-mode-map
     "i" 'my-org-pomodoro)
 
+  (setq org-pomodoro-finished-sound nil)
+  (setq org-pomodoro-short-break-sound "~/Dropbox/Scripts/one-piece-wano-gained-db.wav")
+  (setq org-pomodoro-long-break-sound nil)
+
   ;; Hook for org-pomodoro
   (add-hook 'org-pomodoro-started-hook
           (lambda ()
