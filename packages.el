@@ -1,5 +1,8 @@
 ;;; packages.el --- Packages File -*- lexical-binding: t; no-byte-compile: t -*-
 
+(straight-use-package
+   '(emacs-presentation-mode :type git :host github :repo "zonuexe/emacs-presentation-mode"))
+
 (use-package electric
   :straight (:type built-in)
   :init
