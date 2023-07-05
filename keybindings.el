@@ -92,7 +92,8 @@
   ;; open
   (patrl/leader-keys
     "o" '(:ignore t :wk "open")
-    "os" '(speedbar t :wk "speedbar")) ;; TODO this needs some love
+    "oc" '(lambda() (interactive) (find-file "~/.emacs.d/"))
+    "os" '(speedbar t :wk "speedbar"))
 
   ;; run
   (patrl/leader-keys
