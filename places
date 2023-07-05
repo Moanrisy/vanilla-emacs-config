@@ -1,0 +1,9 @@
+;;; -*- coding: utf-8; mode: lisp-data -*-
+(("/home/mars/Dropbox/notes/youtube ideas nyamuk terbang dev.org" . 1165)
+ ("/home/mars/Dropbox/notes/now.org" . 21674)
+ ("/home/mars/.emacs.d/"
+  (dired-filename . "/home/mars/.emacs.d/packages.el"))
+ ("/home/mars/.emacs.d/packages.el" . 3876)
+ ("/home/mars/.emacs.d/my-agenda.el" . 2900)
+ ("/home/mars/.emacs.d/keybindings.el" . 2806)
+ ("/home/mars/.emacs.d/my-config.el" . 328))
