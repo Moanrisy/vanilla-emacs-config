@@ -1,5 +1,12 @@
 ;;; my-config.el --- My own init config file -*- lexical-binding: t; no-byte-compile: t -*-
 
+;;; automatically insert timestamp on new heading
+(defun my/org-add-created-timestamp ()
+  (interactive)
+  (org-set-property "CREATED" (format-time-string "[%Y-%m-%d %a]")))
+
+(add-hook 'org-insert-heading-hook 'my/org-add-created-timestamp)
+
 ;;; open magit status in full screen
 (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
 
